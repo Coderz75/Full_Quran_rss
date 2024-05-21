@@ -39,6 +39,9 @@ for i in surah:
 <item>
         <title>Al-Quran-{a}:{b}</title>
         <description>{l}</description>
+        <guid>https://coderz75.github.io</guid>
+        <link>https://coderz75.github.io</link>
+        <pubDate>Mon, 20 Mar 2024 09:28:00</pubDate>
 </item>
 """
             b+=1
