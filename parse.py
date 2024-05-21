@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import re
- 
+from datetime import datetime
 # Reading the data inside the xml
 # file to a variable under the name 
 # data
@@ -28,6 +28,7 @@ text = """
     <copyright>Copyright 2024 Coderz75</copyright>
 """
 a = 1
+
 for i in surah:
     b = 1
     for x in i:
@@ -35,13 +36,16 @@ for i in surah:
         if l:
             l = l.span()
             l= str(x)[l[0]:l[1]]
+            date = datetime.now()
+            ffff = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+            ff = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
             text += f"""
 <item>
         <title>Al-Quran-{a}:{b}</title>
         <description>{l}</description>
         <guid>https://coderz75.github.io</guid>
         <link>https://coderz75.github.io</link>
-        <pubDate>Mon, 20 Mar 2024 09:28:00</pubDate>
+        <pubDate>{ffff[date.weekday()]}, {date.day} {ff[date.month]} {date.year}</pubDate>
 </item>
 """
             b+=1
